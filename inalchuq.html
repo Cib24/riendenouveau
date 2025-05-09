@@ -25,7 +25,13 @@
       word-wrap: break-word;
     }
     nav {
-      margin-top: 1em;
+      position: sticky;
+      top: 0;
+      margin: 0;
+      padding: 0.5em 0;
+      background-color: rgba(17, 17, 17, 0.95);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
     }
     nav a {
       color: #c8c;
@@ -47,30 +53,20 @@
     a.back:hover {
       text-decoration: underline;
     }
-    header nav {
-      position: sticky;
-      top: 0;
-      margin: 0;
-      padding: 0.5em 0;
-      background-color: rgba(17, 17, 17, 0.95);
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      z-index: 1000;
-      transition: background-color 0.3s, box-shadow 0.3s;
-    }
     header h1 {
       margin-top: 1.3em;
     }
     main {
-      padding-top: 2,5em;
+      padding-top: 1.3em;
   </style>
 </head>
 <body>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="reve.html">Un rêve d'empêchement</a>
+    <a href="storyofherlife.html">The Story of Her Life</a>
+  </nav>
   <header>
-    <nav>
-      <a href="index.html">Accueil</a>
-      <a href="reve.html">Un rêve d'empêchement</a>
-      <a href="storyofherlife.html">The Story of Her Life</a>
-    </nav>
     <h1>Things of Inalchuq’s life</h1>
     <p><em>par Bruno Corréard</em></p>
   </header>
