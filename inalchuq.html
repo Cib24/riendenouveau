@@ -76,25 +76,14 @@
     a.back:hover {
       text-decoration: underline;
     }
-    .two-col-grid {
-      display: grid;
-      row-gap: 0;
-    }
     .two-col-grid .row {
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       column-gap: 1em;
+      justify-items: center;
+      align-items: start;
     }
-    two-col-grid .row .col:first-child {
-      justify-self: end;
-      text-align: right;
-    }
-    .two-col-grid .row .col:last-child {
-      justify-self: start;
-      text-align: left;
-    }
-    .two-col-grid .row .diamond {
-      justify-self: center;
+    .two-col-grid .diamond {
       font-size: 0.8em;
       line-height: 1;
     }
@@ -102,7 +91,7 @@
       .two-col-grid .row {
         grid-template-columns: 1fr;
       }
-      .two-col-grid .row .diamond {
+      .two-col-grid .diamond {
         margin: 0.5em auto;
       }
     }
