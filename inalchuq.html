@@ -4,9 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    html, body {
-      overflow-x: auto;
-    }
     body {
       margin: 0;
       padding: 2vw;
@@ -16,7 +13,6 @@
       font-size: clamp(14px, 2.5vw, 16px);
       line-height: 1.8;
     }
-
     .content {
       max-width: 800px;
       width: 100%;
@@ -25,7 +21,6 @@
       word-wrap: break-word;
       padding: 0 1rem;
     }
-
     header {
       text-align: center;
       padding-top: 2rem;
@@ -80,31 +75,41 @@
     a.back:hover {
       text-decoration: underline;
     }
-    .two-col-grid {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5em;
+    .two-col {
+      column-count: 2;
+      column-gap: 2em;
       max-width: 800px;
       margin: 1em auto;
-    }
-    .two-col-grid .row {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 1em;
-      width: 100%;
-    }
-    .two-col-grid .row .col {
-      flex: 1;
       line-height: 1.8;
-      text-align: center;
+      position: relative;
     }
-    .two-col-grid .row .diamond {
-      flex: 0 0 auto;
-      font-size: 0.8em;
-      line-height: 1.8;
-      text-align: center;
+    .two-col::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1em;
+      transform: translateX(-50%);
+      background-image: url("data:image/svg+xml;utf8,\
+    <svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'>\
+    <polygon points='50,0 100,50 50,100 0,50' fill='none' stroke='white' stroke-width='10'/>\
+    </svg>");
+      background-repeat: repeat-y;
+      background-size: 0.8em 0.8em;
+      background-position: center;
+      pointer-events: none;
+    }
+    @media (max-width: 600px) {
+      .two-col {
+        column-gap: 1em;
+        margin: 1em;
+        padding: 0 0.5em;
+      }
+      .two-col::before {
+        width: 0.8em;
+        background-size: 0.6em 0.6em;
+      }
     }
   </style>
 </head>
@@ -136,68 +141,15 @@ But they can defend themselves. He can count on Mehrban, loyal, and more importa
 “Don’t… Don’t…” Inalchuq couldn’t hear what he was thinking, his heart beating too loudly. Don’t scream? Don’t make me feel sorry? Don’t call the others? Don’t die? Don’t take my dirhams?
 Another soldier arrived. He screamed, and raised what was for Inalchuq a sword of Damocles. The sun, coming from the thin, rectangular window, reflected on the sword. And a light came out of this encounter.  And Inalchuq, by association of ideas - thunder, memory - remembered. But the present continues. Inalchuq thought and saw at the same time.
 
-<div class="two-col-grid">
-  <div class="row">
-    <div class="col">During this light, he thought. The</div>
-    <div class="diamond">◈</div>
-    <div class="col">During this light, he saw. The</div>
+<div class="two-col">
+  <div class="col">
+    During this light, he thought. The governor's knowledge became all he could think of. Who was Damocles? When Inalchuq was discussing with his scholarly friend in the bath one year ago, he told him that his offense to the Mongols put a Damocles sword upon his head. Inalchuq didn’t know what it meant, but for him, he just saw it in that sword the mongol was holding. And Damocles, or whatever was his name, became Death.
   </div>
-  <div class="row">
-    <div class="col">governor's knowledge became all he</div>
-    <div class="diamond">◈</div>
-    <div class="col">governor’s body couldn’t move.</div>
-  </div>
-  <div class="row">
-    <div class="col">could think of. Who was Damocles?</div>
-    <div class="diamond">◈</div>
-    <div class="col">His eyes were wide open. His</div>
-  </div>
-  <div class="row">
-    <div class="col">When Inalchuq was discussing with</div>
-    <div class="diamond">◈</div>
-    <div class="col">ears, replaced his occupied brain.</div>
-  </div>
-  <div class="row">
-    <div class="col">his scholarly friend in the bath one</div>
-    <div class="diamond">◈</div>
-    <div class="col">They understood everything.</div>
-  </div>
-  <div class="row">
-    <div class="col">year ago, he told him that his offense</div>
-    <div class="diamond">◈</div>
-    <div class="col">Mehrban was running, as the</div>
-  </div>
-  <div class="row">
-    <div class="col">to the Mongols put a Damocles sword</div>
-    <div class="diamond">◈</div>
-    <div class="col">sword whistled, cutting the air.</div>
-  </div>
-  <div class="row">
-    <div class="col">upon his head. Inalchuq didn’t know</div>
-    <div class="diamond">◈</div>
-    <div class="col">Their course met in one point. In</div>
-  </div>
-  <div class="row">
-    <div class="col">what it meant, but for him, he just</div>
-    <div class="diamond">◈</div>
-    <div class="col">front of Inalchuq. Where his eyes</div>
-  </div>
-  <div class="row">
-    <div class="col">saw it in that sword the mongol was</div>
-    <div class="diamond">◈</div>
-    <div class="col">should have closed. Where his</div>
-  </div>
-  <div class="row">
-    <div class="col">holding. And Damocles, or whatever</div>
-    <div class="diamond">◈</div>
-    <div class="col">ears should have hear nothing but</div>
-  </div>
-  <div class="row">
-    <div class="col">was his name, became Death.</div>
-    <div class="diamond">◈</div>
-    <div class="col">the ground, where Mehrban fell.</div>
+  <div class="col">
+    During this light, he saw. The governor’s body couldn’t move. His eyes were wide open. His ears, replaced his occupied brain. They understood everything. Mehrban was running, as the sword whistled, cutting the air. Their course met in one point. In front of Inalchuq. Where his eyes should have closed. Where his ears should have hear nothing but the ground, where Mehrban fell. 
   </div>
 </div>
+
 Inalchuq closed his eyes. But this death wasn’t for him. It was for Mehrban, who tried to protect him. Damocles was greater than ever, and Inalchuq was alone. That’s why he closed his eyes. To see a dark world. Where multicolored spots dance. Where you see the present as a memory, because light and image merge into a drawing of the last shapes seen by the eyes. When he opened them, mongols were all over the room. Damocles was everywhere. He understood now. It meant danger. So he closed his eyes again, he closed his ears, he closed the pores of his skin, and decided to never know when his life would end. And to think only about his thoughts. One by one.
 
 Inalchuq didn’t live anymore. 
