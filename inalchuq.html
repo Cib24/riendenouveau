@@ -76,19 +76,28 @@
       text-decoration: underline;
     }
     .two-col {
+      position: relative;
       column-count: 2;
-      column-gap: 5em;
-      column-rule: 1px solid currentColor;
+      column-gap: 4em;
       max-width: 800px;
-      margin-block: 0.1em;
+      margin-block: 1em;
       margin-inline: auto;
       line-height: 1.8;
       text-align: center;
-    }  
+    }
+    .two-col::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background-color: currentColor;
+      pointer-events: none;
+    }
     @media (max-width: 600px) {
       .two-col {
         column-gap: 2em;
-        padding-inline: 1em;
       }
     }
   </style>
