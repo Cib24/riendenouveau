@@ -80,9 +80,12 @@
     .two-col-grid {
       display: flex;
       flex-direction: column;
-      gap: 0.5em;
-      margin-block: 0.5em;
-      white-space: normal;
+    }
+    .two-col-grid .col {
+      line-height: 1.8;
+    }
+    .two-col-grid .diamond {
+      line-height: 1.8;
     }
     .two-col-grid .row {
       display: grid;
@@ -98,13 +101,13 @@
     }
     @media (max-width: 600px) {
       .two-col-grid {
-        gap: 0.3em;
+        gap: 0.5em;
       }
       .two-col-grid .row {
         grid-template-columns: 1fr;
       }
       .two-col-grid .diamond {
-        margin: 0.3em auto;
+        margin: 0.5em auto;
       }
     }
   </style>
