@@ -77,11 +77,12 @@
     .two-col {
       display: grid;
       grid-template-columns: 1fr auto 1fr;
-      align-items: start;
+      align-items: stretch;
       gap: 1em;
       padding: 1em 0;
     }
     .two-col .diamond {
+      align-self: stretch;
       width: 1em;
       background-image: url("data:image/svg+xml;utf8,\
     <svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'>\
@@ -89,6 +90,7 @@
     </svg>");
       background-repeat: repeat-y;
       background-position: center;
+      background-size: 0.8em 1.8em;
     }
     @media (max-width: 600px) {
       .two-col {
