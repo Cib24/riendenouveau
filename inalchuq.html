@@ -94,17 +94,19 @@
       justify-items: center;
       align-items: start;
     }
+    .two-col-grid .row {
+      display: flex;
+      align-items: flex-start;
+    }
     .two-col-grid .diamond {
+      flex: 0 0 auto;
+      margin: 0 1em;
       font-size: 0.8em;
-      line-height: 1;
-      justify-self: center;
+      line-height: 1.8;
     }
     @media (max-width: 600px) {
-      .two-col-grid {
-        gap: 0.5em;
-      }
       .two-col-grid .row {
-        grid-template-columns: 1fr;
+        flex-direction: column;
       }
       .two-col-grid .diamond {
         margin: 0.5em auto;
