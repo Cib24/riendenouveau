@@ -78,21 +78,27 @@
     .two-col {
       column-count: 2;
       column-gap: 4em;
-      column-rule: 1px solid currentColor;
       max-width: 800px;
-      margin-block: 0;
-      margin-inline: auto;
+      margin: 0 auto;
+      padding-block: 1em;
       line-height: 1.8;
       text-align: center;
+      position: relative;
+    }
+    .two-col::before {
+      content: "";
+      position: absolute;
+      top: 0.3em;
+      bottom: 0.3em;
+      left: 50%;
+      width: 1px;
+      background-color: currentColor;
+      pointer-events: none;
     }
     @media (max-width: 600px) {
       .two-col {
         column-gap: 2em;
-        padding: 0 0em;
-      }
-      .two-col::before {
-        width: 0.6em;
-        background-size: 0.6em 0.6em;
+        padding-inline: 0.5em;
       }
     }
   </style>
