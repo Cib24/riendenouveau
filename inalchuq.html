@@ -13,6 +13,7 @@
       font-size: clamp(14px, 2.5vw, 16px);
       line-height: 1.8;
     }
+
     .content {
       max-width: 800px;
       width: 100%;
@@ -21,6 +22,7 @@
       word-wrap: break-word;
       padding: 0 1rem;
     }
+
     header {
       text-align: center;
       margin-bottom: 0.1em;
@@ -32,8 +34,6 @@
       flex-wrap: nowrap;
       position: fixed;
       top: 0;
-      left: 0;
-      right: 0;
       margin: 0;
       padding: 0.5em 0;
       background-color: rgba(17,17,17,0.8);
@@ -60,7 +60,6 @@
     }
     header p {
       margin: 0 0 0.2em;
-      margin-bottom: 0.2em;
     }
     main {
       padding-top: 2.5em;
@@ -76,22 +75,20 @@
       text-decoration: underline;
     }
     .two-col {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: stretch;
+      display: flex;
+      align-items: flex-start;
       gap: 1em;
-      padding: 0.5em 0;
+      overflow-x: auto;
+      padding: 1em 0;
+    }
+    .two-col .col {
+      flex: 1;
+      min-width: 150px;
     }
     .two-col .diamond {
-      align-self: stretch;
-      width: 1em;
-      background-image: url("data:image/svg+xml;utf8,\
-    <svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'>\
-    <path d='M5 0 L10 5 L5 10 L0 5 Z' fill='%23c8c'/>\
-    </svg>");
-      background-repeat: repeat-y;
-      background-position: center;
-      background-size: 0.8em 1.8em;
+      flex-shrink: 0;
+      font-size: 1.5em;
+      margin: 0 0.5em;
     }
     @media (max-width: 600px) {
       .two-col {
@@ -99,9 +96,8 @@
         overflow-x: visible;
       }
       .two-col .diamond {
-        width: 100%;
-        height: 1em;
-        background-repeat: repeat-x;
+        display: block;
+        text-align: center;
         margin: 0.5em 0;
       }
     }
@@ -136,13 +132,13 @@ But they can defend themselves. He can count on Mehrban, loyal, and more importa
 Another soldier arrived. He screamed, and raised what was for Inalchuq a sword of Damocles. The sun, coming from the thin, rectangular window, reflected on the sword. And a light came out of this encounter.  And Inalchuq, by association of ideas - thunder, memory - remembered. But the present continues. Inalchuq thought and saw at the same time.
 <div class="two-col">
   <div class="col">
-    During this light, he thought. The governor's knowledge became all he could think of. Who was Damocles? When Inalchuq was discussing with his scholarly friend in the bath one year ago, he told him that his offense to the Mongols put a Damocles sword upon his head. Inalchuq didn’t know what it meant, but for him, he just saw it in that sword the mongol was holding. And Damocles, or whatever was his name, became Death.
+   During this light, he thought. The governor's knowledge became all he could think of. Who was Damocles? When Inalchuq was discussing with his scholarly friend in the bath one year ago, he told him that his offense to the Mongols put a Damocles sword upon his head. Inalchuq didn’t know what it meant, but for him, he just saw it in that sword the mongol was holding. And Damocles, or whatever was his name, became Death.
   </div>
-  <div class="diamond"></div>
+  <div class="diamond">◈</div>
   <div class="col">
-    During this light, he saw. The governor’s body couldn’t move. His eyes were wide open. His ears, replaced his occupied brain. They understood everything. Mehrban was running, as the sword whistled, cutting the air. Their course met in one point. In front of Inalchuq. Where his eyes should have closed. Where his ears should have heard nothing but the ground, where Mehrban fell.
+     During this light, he saw. The  governor’s body couldn’t move. His eyes were wide open. His ears, replaced his occupied brain. They understood everything. Mehrban was running, as the sword whistled, cutting the air. Their course met in one point. In front of Inalchuq. Where his eyes should have closed. Where his ears should have hear nothing but the ground, where Mehrban fell.
   </div>
-</div>
+</div> 
 Inalchuq closed his eyes. But this death wasn’t for him. It was for Mehrban, who tried to protect him. Damocles was greater than ever, and Inalchuq was alone. That’s why he closed his eyes. To see a dark world. Where multicolored spots dance. Where you see the present as a memory, because light and image merge into a drawing of the last shapes seen by the eyes. When he opened them, mongols were all over the room. Damocles was everywhere. He understood now. It meant danger. So he closed his eyes again, he closed his ears, he closed the pores of his skin, and decided to never know when his life would end. And to think only about his thoughts. One by one.
 
 Inalchuq didn’t live anymore. 
