@@ -77,26 +77,24 @@
       text-decoration: underline;
     }
     .two-col-grid {
-      display: grid;
-      row-gap: 0;
+      margin: 0 auto;
     }
     .two-col-grid .row {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-      align-items: start;
+      grid-template-columns: 2fr auto 2fr;
       column-gap: 1em;
     }
     .two-col-grid .diamond {
       font-size: 0.8em;
-      text-align: center;
       line-height: 1;
+      justify-self: center;
     }
     @media (max-width: 600px) {
       .two-col-grid .row {
         grid-template-columns: 1fr;
       }
       .two-col-grid .diamond {
-        margin: 0.5em 0;
+        margin: 0.5em auto;
       }
     }
   </style>
