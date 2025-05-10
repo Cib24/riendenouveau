@@ -99,14 +99,16 @@
       align-items: flex-start;
     }
     .two-col-grid .diamond {
-      flex: 0 0 auto;
-      margin: 0 1em;
       font-size: 0.8em;
-      line-height: 1.8;
+      line-height: 1;
+      justify-self: center;
     }
     @media (max-width: 600px) {
+      .two-col-grid {
+        gap: 0.5em;
+      }
       .two-col-grid .row {
-        flex-direction: column;
+        grid-template-columns: 1fr;
       }
       .two-col-grid .diamond {
         margin: 0.5em auto;
