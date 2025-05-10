@@ -81,11 +81,13 @@
       overflow-x: auto;
       padding: 1em 0;
     }
-    .two-col .col {
-      flex: 1;
-      min-width: 150px;
-      margin: 0;
-      text-indent: 0;
+    .two-col {
+      display: flex;
+    -  align-items: flex-start;
+    +  align-items: stretch;
+      gap: 1em;
+      overflow-x: auto;
+      padding: 1em 0;
     }
     .two-col .diamond {
       flex-shrink: 0;
