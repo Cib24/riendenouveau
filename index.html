@@ -1,86 +1,206 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rien de nouveau – Bruno Corréard</title>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rien de nouveau – Accueil</title>
+  <!-- Polices Google Fonts : Merriweather (texte) et Playfair Display (titres) -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    /* Styles de base */
     body {
       margin: 0;
+      padding: 0;
+      background-color: #121212; /* Fond noir très foncé pour confort visuel */
+      color: #f0f0f0;           /* Texte blanc cassé pour contraste sur fond sombre */
       font-family: 'Merriweather', serif;
-      background-color: #111;
-      color: #eee;
       line-height: 1.6;
     }
-    header, footer {
-      background-color: #000;
-      text-align: center;
-      padding: 1.5em 1em;
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      margin: 0;
     }
-    h1 {
-      margin: 0.5em 0;
-      font-size: 2.8em;
+    p {
+      max-width: 800px;
+      margin: 0 auto 1em auto;
+      padding: 0 1em;
+    }
+    a {
+      color: #f0f0f0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #bb86fc;
+    }
+    header {
+      padding: 1em;
+      text-align: center;
+      background: #121212;
     }
     nav {
-      margin-top: 1em;
+      margin-top: 0.5em;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2em;
     }
     nav a {
-      color: #ccc;
-      margin: 0 1em;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
+      font-family: 'Merriweather', serif;
+      font-size: 1.1em;
+      color: #bb86fc;
+      font-weight: 400;
+      transition: color 0.3s ease;
     }
     nav a:hover {
-      color: #fff;
+      color: #f0f0f0;
     }
     main {
-      max-width: 800px;
-      margin: auto;
       padding: 2em 1em;
+      text-align: center;
     }
-    .story-link {
-      display: block;
+    .site-title {
+      font-size: 2.5em;
+      font-weight: 700;
+      color: #f0f0f0;
+      animation: fadeInDown 1s ease-out both;
+    }
+    .site-subtitle {
+      font-size: 1.2em;
+      font-weight: 300;
+      color: #bb86fc;
+      margin-top: 0.5em;
+      animation: fadeInDown 1.5s ease-out both;
+    }
+    .author-section {
+      margin: 3em auto;
+      max-width: 800px;
+      text-align: center;
+      animation: fadeIn 2s ease-out both;
+    }
+    .author-section h2 {
+      font-size: 1.8em;
+      margin-bottom: 0.5em;
+      font-weight: 700;
+    }
+    .author-section p {
+      text-align: left;
+      font-size: 1em;
+    }
+    .stories-section {
+      max-width: 800px;
+      margin: 2em auto;
+      padding: 0 1em;
+      animation: fadeIn 2.5s ease-out both;
+    }
+    .stories-section h2 {
+      font-size: 1.8em;
+      margin-bottom: 0.5em;
+      font-weight: 700;
+      text-align: center;
+    }
+    .stories-list {
+      list-style: none;
+      padding: 0;
       margin: 2em 0;
-      font-size: 1.4em;
-      color: #89c;
-      text-decoration: none;
-      border-left: 4px solid #555;
-      padding-left: 1em;
-      transition: all 0.2s;
     }
-    .story-link:hover {
-      color: #fff;
-      border-left-color: #89c;
+    .stories-list li {
+      margin: 1.5em 0;
+      text-align: center;
     }
-    footer p {
-      margin: 0.5em 0;
+    .story-title {
+      font-size: 1.5em;
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      color: #f0f0f0;
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-underline-offset: 4px;
+      transition: text-decoration-color 0.3s, color 0.3s;
+    }
+    .story-title:hover {
+      color: #bb86fc;
+      text-decoration-color: #bb86fc;
+    }
+    footer {
+      text-align: center;
+      padding: 2em 1em;
       font-size: 0.9em;
       color: #888;
+    }
+    /* Animations (apparition) */
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    /* Responsive : ajustements pour écran étroit */
+    @media (max-width: 600px) {
+      .site-title {
+        font-size: 2em;
+      }
+      .site-subtitle {
+        font-size: 1em;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 1em;
+      }
+      /* Le texte de présentation reste aligné à gauche par défaut sur mobile */
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Rien de nouveau</h1>
-    <p>par Bruno Corréard</p>
+    <!-- Titre du site et navigation -->
+    <h1 class="site-title">Rien de nouveau</h1>
+    <div class="site-subtitle">Nouvelles littéraires par Bruno Corréard</div>
     <nav>
-      <a href="index.html">Accueil</a>
-      <a href="reve.html">Un rêve d'empêchement</a>
-      <a href="storyofherlife.html">The Story of Her Life</a>
-      <a href="inalchuq.html">Things of Inalchuq’s Life</a>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="reve.html">Un rêve d'empêchement</a></li>
+        <li><a href="her-life.html">The Story of Her Life</a></li>
+        <li><a href="inalchuq.html">Things of Inalchuq’s Life</a></li>
+      </ul>
     </nav>
   </header>
   <main>
-    <h2>Bienvenue</h2>
-    <p>Ce site rassemble trois nouvelles littéraires, entre rêve, mémoire et guerre. Laissez-vous emporter par les récits de Bruno Corréard.</p>
-    <a class="story-link" href="reve.html">→ Un rêve d'empêchement</a>
-    <a class="story-link" href="storyofherlife.html">→ The Story of Her Life</a>
-    <a class="story-link" href="inalchuq.html">→ Things of Inalchuq’s Life</a>
+    <!-- Section de présentation de l'auteur -->
+    <section class="author-section">
+      <h2>Bruno Corréard – Auteur</h2>
+      <p>Bienvenue sur <em>Rien de nouveau</em>, un recueil en ligne de nouvelles littéraires. 
+         Découvrez trois récits singuliers qui explorent des univers et des voix différentes, 
+         en français et en anglais, mis en lumière par la plume de Bruno Corréard.</p>
+      <p>Bruno Corréard est un auteur passionné de littérature, 
+         adepte d’un style d’écriture sobre mais percutant. À travers ces histoires, 
+         il vous invite à plonger dans des réflexions intimes et des voyages imaginaires captivants.</p>
+    </section>
+    <!-- Section des nouvelles -->
+    <section class="stories-section">
+      <h2>Nouvelles à découvrir</h2>
+      <ul class="stories-list">
+        <li><a class="story-title" href="reve.html">«&#8239;Un rêve d'empêchement&#8239;»</a></li>
+        <li><a class="story-title" href="her-life.html">«&#8239;The Story of Her Life&#8239;»</a></li>
+        <li><a class="story-title" href="inalchuq.html">«&#8239;Things of Inalchuq’s Life&#8239;»</a></li>
+      </ul>
+    </section>
   </main>
   <footer>
-    <p>&copy; Bruno Corréard. Tous droits réservés.</p>
+    &copy; 2025 Bruno Corréard – <em>Rien de nouveau</em>
   </footer>
 </body>
 </html>
