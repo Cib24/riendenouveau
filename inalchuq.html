@@ -75,23 +75,34 @@
     a.back:hover {
       text-decoration: underline;
     }
-    .two-col {
-      column-count: 2;
-      column-gap: 4em;
-      column-rule: 1px solid currentColor;
-      max-width: 800px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      padding: 0;
-      line-height: 1.8;
-      text-align: center;
-      display: inline-block; 
-    }
-    @media (max-width: 600px) {
-      .two-col {
-        column-gap: 2em;
-      }
-    }
+.two-col {
+  column-count: 2;
+  column-gap: 4em;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+  line-height: 1.8;
+  text-align: justify;
+  display: inline-block;
+  height: auto;
+  vertical-align: top;
+  column-rule: none; /* remove the column rule */
+}
+
+.two-col p {
+  position: relative;
+  padding-left: 10px;
+}
+
+.two-col p::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  border-top: 1px solid currentColor; /* adding the border at the center of the paragraphs */
+  transform: translateY(-50%);
+}
   </style>
 </head>
 <body>
