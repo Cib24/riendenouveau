@@ -78,16 +78,20 @@
     .two-col {
       column-count: 2;
       column-gap: 4em;
+      column-rule: 1px solid currentColor;
       max-width: 800px;
       margin: 0 auto;
       padding: 0;
       line-height: 1.8;
-      text-align: justify;
-      display: inline-block;
-      vertical-align: top;
-      column-rule: 1px solid #fff; /* Add the vertical line between the columns */
-    .two-col p {
-      margin-bottom: 1em; /* Ensure there is space between paragraphs */
+      text-align: center;
+      display: inline-block; 
+      height: auto; 
+      vertical-align: top; 
+    }
+    @media (max-width: 600px) {
+      .two-col {
+        column-gap: 2em;
+      }
     }
   </style>
 </head>
