@@ -2,7 +2,8 @@
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
   <ShortName>Doudoudoute</ShortName>
   <Description>Recherche sur Doudoudoute</Description>
-  <Url type="text/html" method="get"
-       template="https://doudoudoute.com/?q={searchTerms}"/>
+  <Url
+    type="text/html"
+    template="https://doudoudoute.com/?q={searchTerms}" />
   <InputEncoding>UTF-8</InputEncoding>
 </OpenSearchDescription>
