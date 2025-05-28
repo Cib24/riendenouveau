@@ -179,7 +179,36 @@
         flex-direction: column;
         gap: 1em;
       }
-      /* Le texte de présentation reste aligné à gauche par défaut sur mobile */
+    }
+    .hero {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .hero-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+    .hero-video--portrait {
+      display: none;
+    }
+    @media (orientation: portrait) {
+      .hero-video--landscape { display: none; }
+      .hero-video--portrait  { display: block; }
+    }
+    @media (orientation: landscape) {
+      .hero-video--landscape { display: block; }
+      .hero-video--portrait  { display: none; }
+    }
+    @media (max-width: 600px) {
+      .hero { height: 50vh; }
     }
   </style>
   <link rel="search"
@@ -188,6 +217,32 @@
       href="/opensearch.xml">
 </head>
 <body>
+  <section class="hero">
+  <video
+    class="hero-video hero-video--landscape"
+    autoplay
+    muted
+    loop
+    playsinline
+    poster="videos/paysage-poster.jpg"
+  >
+    <source src="videos/paysage.mp4" type="video/mp4">
+  </video>
+  <video
+    class="hero-video hero-video--portrait"
+    autoplay
+    muted
+    loop
+    playsinline
+    poster="videos/portrait-poster.jpg"
+  >
+    <source src="videos/portrait.mp4" type="video/mp4">
+  </video>
+  <div class="overlay">
+      <h1 class="site-title">Doudoudoute</h1>
+      <div class="site-subtitle">Nouvelles littéraires de Bruno Correard</div>
+  </div>
+</section>
   <header>
     <!-- Titre du site et navigation -->
     <h1 class="site-title">Doudoudoute</h1>
@@ -225,5 +280,15 @@
   <footer>
     &copy; 2025 Bruno Correard – <em>Doudoudoute</em>
   </footer>
+    <script>
+    function swapHeroVideos() {
+      const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+      document.querySelector('.hero-video--landscape').style.display = isPortrait ? 'none' : 'block';
+      document.querySelector('.hero-video--portrait') .style.display = isPortrait ? 'block' : 'none';
+    }
+    window.addEventListener('resize', swapHeroVideos);
+    window.addEventListener('orientationchange', swapHeroVideos);
+    swapHeroVideos();
+  </script>
 </body>
 </html>
